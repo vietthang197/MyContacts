@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "634366693723",
+    "firebase_url": "https://mycontact-b24a0.firebaseio.com",
+    "project_id": "mycontact-b24a0",
+    "storage_bucket": "mycontact-b24a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634366693723:android:19a01f3c23fcaf01",
+        "android_client_info": {
+          "package_name": "thangducanh.tagroup.com.mycontacts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634366693723-ti11k5ou4466tjg9utkimhooiocjpdbt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "thangducanh.tagroup.com.mycontacts",
+            "certificate_hash": "3bd40ee7fd90427b7b57f0b323975ec3cf62449b"
+          }
+        },
+        {
+          "client_id": "634366693723-q2cemdnb3qf0rr0jdtkculd80n118pkq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD75NLs_wzwLVXY7b70Ytv9y2bhbwfSj6A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634366693723-q2cemdnb3qf0rr0jdtkculd80n118pkq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

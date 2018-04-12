@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyContacts</string>
+    <string name="icontact">My Contacts</string>
+    <string name="dang_nhap">Đăng nhập bằng tài khoản Google</string>
+</resources>
