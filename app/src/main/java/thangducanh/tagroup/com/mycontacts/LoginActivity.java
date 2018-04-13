@@ -1,5 +1,6 @@
 package thangducanh.tagroup.com.mycontacts;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
@@ -7,29 +8,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInApi;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.SignInButton;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
-
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final int REQUEST_ACCOUNT = 1111;
     private TextInputEditText edtUserName, edtPassWord;
     private Button btnDangNhap;
     private TextView tvDangKy;
@@ -47,6 +34,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         SpannableString content = new SpannableString(getResources().getString(R.string.dang_ky_tai_day));
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
         tvDangKy.setText(content);
+        tvDangKy.setOnClickListener(this);
 
         btnDangNhap.setOnClickListener(this);
     }
@@ -65,11 +53,32 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btn_dang_nhap:
                 xuLyDangNhap();
                 break;
+            case R.id.tv_dang_ky:
+                xuLyDangKy();
+                break;
         }
     }
 
+    private void xuLyDangKy() {
+        Intent intentMainAcitivty = new Intent(LoginActivity.this, RegisterActivity.class);
+        startActivityForResult(intentMainAcitivty,REQUEST_ACCOUNT);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
+
     private void xuLyDangNhap() {
-        Intent intentMainAcitivty = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(intentMainAcitivty);
+
+        Dialog dialog=new Dialog(this,android.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
+        dialog.setContentView(R.layout.dialog_loading);
+        dialog.show();
+        boolean check = checkValueRegister(edtUserName.getText().toString(),edtPassWord.getText().toString());
+        if(check){
+            Toast.makeText(LoginActivity.this,"regex ok",Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(LoginActivity.this,"regex failed",Toast.LENGTH_SHORT).show();
+        }
+    }
+    public boolean checkValueRegister(String userName, String passWord){
+        String regex = "[a-zA-Z0-9_]{3,}";
+        return userName.matches(regex);
     }
 }

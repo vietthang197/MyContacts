@@ -7,4 +7,9 @@
     <string name="login">Đăng nhập</string>
     <string name="dang_ky_tai_day">Đăng ký</string>
     <string name="ban_khong_co_tk">Bạn không có tài khoản?</string>
+    <string name="dang_ky">Đăng ký để sử dụng danh bạ thông minh</string>
+    <string name="nhap_lai_mat_khau">Nhập lại mật khẩu</string>
+    <string name="email">Email</string>
+    <string name="ho_va_ten">Họ và tên</string>
+    <string name="dang_xu_ly">Đang xử lý, vui lòng đợi....</string>
 </resources>
