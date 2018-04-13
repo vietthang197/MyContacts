@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="26sp"
@@ -22,15 +22,74 @@
         android:layout_marginBottom="20dp"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textSize="18sp"
+        android:textSize="16sp"
+        android:textStyle="italic"
         android:text="@string/dang_nhap"/>
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/btn_sign_in_google"
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_margin="10dp"
-        android:textAlignment="center"></com.google.android.gms.common.SignInButton>
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp">
 
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/edt_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ten_dang_nhap"
+            android:inputType="text"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:passwordToggleEnabled="true">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/edt_pass_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mat_khau"
+            android:inputType="textPassword" />
+    </android.support.design.widget.TextInputLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:gravity="center"
+        android:padding="20dp">
+
+        <Button
+            android:id="@+id/btn_dang_nhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button_login"
+            android:textColor="@android:color/white"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:text="@string/login"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ban_khong_co_tk"/>
+        <TextView
+            android:id="@+id/tv_dang_ky"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:layout_marginLeft="5dp"/>
+    </LinearLayout>
 </LinearLayout>
